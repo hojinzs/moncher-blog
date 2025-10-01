@@ -9,10 +9,10 @@ importers:
   .:
     devDependencies:
       '@types/react':
-        specifier: ^19.1.0
+        specifier: ^19
         version: 19.1.0
       '@types/react-dom':
-        specifier: ^19.1.1
+        specifier: ^19
         version: 19.1.1(@types/react@19.1.0)
       prettier:
         specifier: ^3.6.2

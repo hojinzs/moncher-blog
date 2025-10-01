@@ -12,9 +12,19 @@
   },
   "dependencies": {
     "@moncher-blog/ui": "workspace:*",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-separator": "^1.1.2",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@radix-ui/react-tabs": "^1.1.3",
+    "@strapi/blocks-react-renderer": "^1.0.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "*",
+    "date-fns": "^4.1.0",
+    "lucide-react": "^0.487.0",
     "next": "^15.5.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "tailwind-merge": "*"
   },
   "devDependencies": {
     "@moncher-blog/eslint-config": "workspace:*",
@@ -22,7 +32,10 @@
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9.34.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3",
     "typescript": "5.9.2"
   }
 }

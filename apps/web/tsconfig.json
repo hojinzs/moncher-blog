@@ -1,11 +1,18 @@
 {
-  "extends": "@repo/typescript-config/nextjs.json",
+  "extends": "@moncher-blog/typescript-config/nextjs.json",
   "compilerOptions": {
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/entities/*": ["./src/entities/*"],
+      "@/features/*": ["./src/features/*"],
+      "@/shared/*": ["./src/shared/*"],
+      "@/widgets/*": ["./src/widgets/*"]
+    }
   },
   "include": [
     "**/*.ts",

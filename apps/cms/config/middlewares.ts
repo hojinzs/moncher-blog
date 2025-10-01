@@ -1,8 +1,4 @@
 export default ({ env }) => [
-  {
-    name: 'global::debug-headers',
-    config: {},
-  },
   'strapi::logger',
   'strapi::errors',
   {

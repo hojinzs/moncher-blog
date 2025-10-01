@@ -5,7 +5,6 @@ export default ({ env }) => [
   },
   'strapi::logger',
   'strapi::errors',
-  'global::trust-proxy',
   {
     name: 'strapi::security',
     config: {

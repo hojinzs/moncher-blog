@@ -8,7 +8,7 @@ services:
     init: true
     command: sleep infinity
     user: node
-    working_dir: /workspace/moncher-blog
+    working_dir: /workspace
     volumes:
       - ..:/workspace:cached
       - pnpm-store:/home/node/.local/share/pnpm

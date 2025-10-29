@@ -2,7 +2,7 @@
   "name": "Moncher Blog",
   "dockerComposeFile": "docker-compose.yml",
   "service": "workspace",
-  "workspaceFolder": "/workspace/moncher-blog",
+  "workspaceFolder": "/workspace",
   "remoteUser": "node",
   "runServices": ["frontend", "cms"],
   "forwardPorts": [3000, 1337],

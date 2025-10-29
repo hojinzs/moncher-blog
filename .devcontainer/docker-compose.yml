@@ -1,0 +1,57 @@
+version: "3.9"
+
+services:
+  workspace:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    init: true
+    command: sleep infinity
+    user: node
+    working_dir: /workspace/moncher-blog
+    volumes:
+      - ..:/workspace:cached
+      - pnpm-store:/home/node/.local/share/pnpm
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    init: true
+    depends_on:
+      - workspace
+    user: node
+    working_dir: /workspace/moncher-blog
+    command: >-
+      bash -lc "until [ -f node_modules/.modules.yaml ]; do echo 'Waiting for pnpm install...'; sleep 2; done; pnpm --filter web dev"
+    volumes:
+      - ..:/workspace:cached
+      - pnpm-store:/home/node/.local/share/pnpm
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+
+  cms:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    init: true
+    depends_on:
+      - workspace
+    user: node
+    working_dir: /workspace/moncher-blog
+    command: >-
+      bash -lc "until [ -f node_modules/.modules.yaml ]; do echo 'Waiting for pnpm install...'; sleep 2; done; pnpm --filter cms dev"
+    volumes:
+      - ..:/workspace:cached
+      - pnpm-store:/home/node/.local/share/pnpm
+    ports:
+      - "1337:1337"
+    environment:
+      NODE_ENV: development
+      HOST: 0.0.0.0
+      PORT: 1337
+
+volumes:
+  pnpm-store:

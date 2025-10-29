@@ -1,0 +1,33 @@
+{
+  "name": "Moncher Blog",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "workspace",
+  "workspaceFolder": "/workspace/moncher-blog",
+  "remoteUser": "node",
+  "runServices": ["frontend", "cms"],
+  "forwardPorts": [3000, 1337],
+  "portsAttributes": {
+    "3000": {
+      "label": "Frontend Preview",
+      "onAutoForward": "openBrowser"
+    },
+    "1337": {
+      "label": "Strapi CMS Preview",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "pnpm install",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "files.trimTrailingWhitespace": true,
+        "terminal.integrated.shellIntegration.enabled": true
+      },
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}

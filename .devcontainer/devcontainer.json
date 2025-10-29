@@ -1,14 +1,10 @@
 {
   "name": "Moncher Blog",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".."
-  },
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "workspace",
   "workspaceFolder": "/workspace/moncher-blog",
   "remoteUser": "node",
-  "mounts": [
-    "source=pnpm-store,target=/home/node/.local/share/pnpm,type=volume"
-  ],
+  "runServices": ["frontend", "cms"],
   "forwardPorts": [3000, 1337],
   "portsAttributes": {
     "3000": {

@@ -23,7 +23,7 @@ services:
     user: node
     working_dir: /workspace/moncher-blog
     command: >-
-      bash -lc "cd /workspace/moncher-blog && until [ -f node_modules/.modules.yaml ]; do echo 'Waiting for pnpm install...'; sleep 2; done; pnpm --filter web dev"
+      bash -lc "until [ -f node_modules/.modules.yaml ]; do echo 'Waiting for pnpm install...'; sleep 2; done; pnpm --filter web dev"
     volumes:
       - ..:/workspace:cached
       - pnpm-store:/home/node/.local/share/pnpm
@@ -42,7 +42,7 @@ services:
     user: node
     working_dir: /workspace/moncher-blog
     command: >-
-      bash -lc "cd /workspace/moncher-blog && until [ -f node_modules/.modules.yaml ]; do echo 'Waiting for pnpm install...'; sleep 2; done; pnpm --filter cms dev"
+      bash -lc "until [ -f node_modules/.modules.yaml ]; do echo 'Waiting for pnpm install...'; sleep 2; done; pnpm --filter cms dev"
     volumes:
       - ..:/workspace:cached
       - pnpm-store:/home/node/.local/share/pnpm

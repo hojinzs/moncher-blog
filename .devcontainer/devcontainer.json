@@ -24,6 +24,11 @@
       "settings": {
         "com.intellij:app:HttpConfigurable.use_proxy_pac": true
       },
+      "plugins": [
+        "ru.adelf.idea.dotenv",
+        "com.github.x0x0b.codex-launcher",
+        "com.github.copilot",
+      ],
       "backend" : "WebStorm"
     }
   },

@@ -4,7 +4,6 @@
   "service": "workspace",
   "workspaceFolder": "/workspace",
   "remoteUser": "node",
-  "runServices": ["frontend", "cms"],
   "forwardPorts": [3000, 1337],
   "portsAttributes": {
     "3000": {
@@ -18,6 +17,9 @@
   },
   "postCreateCommand": "pnpm install",
   "customizations": {
+    "jetbrains" : {
+      "backend" : "WebStorm"
+    },
     "vscode": {
       "settings": {
         "editor.formatOnSave": true,

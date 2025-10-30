@@ -1,38 +1,33 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-  "name": "Moncher Blog",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "workspace",
-  "workspaceFolder": "/workspace",
-  "remoteUser": "node",
-  "forwardPorts": [3000, 1337],
-  "portsAttributes": {
-    "3000": {
-      "label": "Frontend Preview",
-      "onAutoForward": "openBrowser"
-    },
-    "1337": {
-      "label": "Strapi CMS Preview",
-      "onAutoForward": "openBrowser"
-    }
-  },
-  "postCreateCommand": "pnpm install",
-  "customizations": {
+	"name": "Moncher Blog",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	 "features": {
+       "ghcr.io/devcontainers/features/docker-in-docker:2": {
+         "moby": "false"
+       }
+     },
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+
+	// Configure tool-specific properties.
+  "customizations" : {
     "jetbrains" : {
       "settings": {
         "com.intellij:app:HttpConfigurable.use_proxy_pac": true
       },
       "backend" : "WebStorm"
-    },
-    "vscode": {
-      "settings": {
-        "editor.formatOnSave": true,
-        "files.trimTrailingWhitespace": true,
-        "terminal.integrated.shellIntegration.enabled": true
-      },
-      "extensions": [
-        "esbenp.prettier-vscode",
-        "dbaeumer.vscode-eslint"
-      ]
     }
-  }
+  },
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 }
